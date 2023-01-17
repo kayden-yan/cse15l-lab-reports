@@ -1,6 +1,6 @@
 # CSE 12L Lab Report 1
 ___
-This will be a tutorial for incoming student about how to access our class remote server on ieng6
+This will be a tutorial for incoming student about how to access our class remote server on ieng6. 
 ___
 ## Step 1: Lookup Account and Reset Password
 First, you want to log in with your student AD on this website to lookup your class-specific account for accessing remote server:
@@ -8,7 +8,7 @@ https://sdacs.ucsd.edu/~icc/index.php
 
 Please do follow the tutorial that is provided on lab instructions, [link here](https://docs.google.com/document/d/1hs7CyQeh-MdUfM9uv99i8tqfneos6Y8bDU0uhn1wqho/edit). The UI interface on password change request site is very confusing and there is no interactive button to submit the request. (It was enter or return key on your keyboard to submit the request)
 
-After you see the page that says the global password change results is success, please wait about 15 mins or so for it to take effective.
+After you see the page that says the global password change results is success, please wait about 15 mins or so for it to take effective. 
 ___
 ## Step 2: Install Visual Studio Code
 The VSCode is a terminal that allows you to use command lines to link and interact with the server.
