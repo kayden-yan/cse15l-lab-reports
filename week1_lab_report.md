@@ -1,4 +1,4 @@
-# CSE 12L Lab Report 1
+# CSE 15L Lab Report 1
 ___
 This will be a tutorial for incoming student about how to access our class remote server on ieng6. 
 
