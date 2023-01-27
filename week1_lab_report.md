@@ -53,6 +53,6 @@ cd - change the working directory to the given directory
 
 pwd - print the current working directory
 
-I found it much easier to dive in folders when everytime I use 'cd' then 'ls' to print out the list. Use pwd to check the and confirm where I am working on.
+I found it much easier to dive in folders when everytime I use `cd` then `ls` to print out the list. Use pwd to check the and confirm where I am working on.
 
 Make sure to use `exit` to close the connection once you finish working on the server.
