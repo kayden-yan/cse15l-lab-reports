@@ -45,4 +45,14 @@ ___
 There are many useful commands that are provided in lab instructions. Here is an example of how I used those commands:
 ![lab1commands](https://user-images.githubusercontent.com/122576038/212785816-6649fed8-8c47-47f7-a493-b410ac4b5bfb.jpg)
 
+Here are some commands I used to navigate through online server directory:
+
+ls - print a list of files and subdirectories within directories
+
+cd - change the working directory to the given directory
+
+pwd - print the current working directory
+
+I found it much easier to dive in folders when everytime I use 'cd' then 'ls' to print out the list. Use pwd to check the and confirm where I am working on.
+
 Make sure to use `exit` to close the connection once you finish working on the server.
