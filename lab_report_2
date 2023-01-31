@@ -55,23 +55,25 @@ http://localhost:8080/add-message?s=It's hard to overstate my satisfaction
 http://localhost:8080/add-message?s=Apecture Science
 ```
 
-/Insert image here
+![part1img1](https://github.com/kayden-yan/cse15l-lab-reports/blob/main/image/lab2/part1img1.png?raw=true)
 
 
 In additional, I added a request to clears out the display, so I don't have to reopen the server everytime.
-/add image
+
+![part1img2](https://github.com/kayden-yan/cse15l-lab-reports/blob/main/image/lab2/part1img2.png?raw=true)
 
 ___
 ## Part 2: Choose One of the Bugs From Lab 3
 reverseInPlace:
 
-//add image
+![part2img1](https://github.com/kayden-yan/cse15l-lab-reports/blob/main/image/lab2/part2img1.png?raw=true)
+
 Failure-inducing input: {1,2,3}. This was discovered by the Assertion test, as it can't outputs as expected.
 Symptom: {3,2,3}
 Bug: The method reverseInPlace actually mirrors the last part of the input array. It modifies the original array so once the index runs on the later half of the  original array, it fails to obtain the information that was overwritten by the method on the first half.
 Fix:
-//add image
 
+![part2img2](https://github.com/kayden-yan/cse15l-lab-reports/blob/main/image/lab2/part2img2.png?raw=true)
 
 ___
 ## Part 3: Describe Something You Learned From Lab
