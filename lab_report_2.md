@@ -62,6 +62,7 @@ http://localhost:4400/add-message?s=Hello%20World
 ```
 Screenshot:
 ![part1img1](https://github.com/kayden-yan/cse15l-lab-reports/blob/main/image/lab2/part1img1(1).png?raw=true)
+
 This url invokes the Handler class and handleRequest method to check my input. Which in this case, if path equals "/add-message", it adds the input query to the class variable "display", then let it displays on the webpage by returning it.
 
 ```
@@ -69,6 +70,7 @@ http://localhost:4400/empty
 ```
 Screenshot:
 ![part1img2](https://github.com/kayden-yan/cse15l-lab-reports/blob/main/image/lab2/part1img2(1).png?raw=true)
+
 This url invokes the Handler class and handleRequest method to check my input. Which in this case, if path equals "/empty", it changes the class variable "display" to a empty string, then display that the content we inputed before was emptied successfully.
 
 Which if we input something new:
@@ -77,6 +79,7 @@ http://localhost:4400/add-message?s=New%20Message
 ```
 Screenshot:
 ![part1img3](https://github.com/kayden-yan/cse15l-lab-reports/blob/main/image/lab2/part1img3.png?raw=true)
+
 It will not show up the "Hello World" we entered before.
 ___
 ## Part 2: Choose One of the Bugs From Lab 3
