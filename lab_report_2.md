@@ -9,6 +9,7 @@ import java.net.URI;
 
 class Handler implements URLHandler {
    String display = "";
+
     public String handleRequest(URI url) {
         if (url.getPath().equals("/")) {
             return display;
@@ -26,54 +27,89 @@ class Handler implements URLHandler {
         }
         else if (url.getPath().equals("/empty")){
             display = "";
-            return "Cache cleaned";
+            return "Content emptied";
         }
         else {
             return "404 Not Found";
         }
     }
 }
+
 class StringServer {
     public static void main(String[] args) throws IOException {
         if(args.length == 0){
             System.out.println("Missing port number! Try any number between 1024 to 49151");
             return;
         }
+
         int port = Integer.parseInt(args[0]);
+
         Server.start(port, new Handler());
     }
 }
 ```
 
+Following is the command I used in the terminal to start up the local website:
+```
+javac StringServer.java Server.java
+java StringServer 4400
+```
+
 After I complie and run the script for the website to startup, I entered the following url in the browser to test the functionality:
 
 ```
-http://localhost:8080/add-message?s=This was a triumph
-http://localhost:8080/add-message?s=We are making a note here:
-http://localhost:8080/add-message?s=HUGE SUCCESS
-http://localhost:8080/add-message?s=It's hard to overstate my satisfaction
-http://localhost:8080/add-message?s=Apecture Science
+http://localhost:4400/add-message?s=Hello%20World
 ```
+Screenshot:
+![part1img1](https://github.com/kayden-yan/cse15l-lab-reports/blob/main/image/lab2/part1img1(1).png?raw=true)
+This url invokes the Handler class and handleRequest method to check my input. Which in this case, if path equals "/add-message", it adds the input query to the class variable "display", then let it displays on the webpage by returning it.
 
-![part1img1](https://github.com/kayden-yan/cse15l-lab-reports/blob/main/image/lab2/part1img1.png?raw=true)
+```
+http://localhost:4400/empty
+```
+Screenshot:
+![part1img2](https://github.com/kayden-yan/cse15l-lab-reports/blob/main/image/lab2/part1img2(1).png?raw=true)
+This url invokes the Handler class and handleRequest method to check my input. Which in this case, if path equals "/empty", it changes the class variable "display" to a empty string, then display that the content we inputed before was emptied successfully.
 
-
-In additional, I added a request to clears out the display, so I don't have to reopen the server everytime.
-
-![part1img2](https://github.com/kayden-yan/cse15l-lab-reports/blob/main/image/lab2/part1img2.png?raw=true)
-
+Which if we input something new:
+```
+http://localhost:4400/add-message?s=New%20Message
+```
+Screenshot:
+![part1img3](https://github.com/kayden-yan/cse15l-lab-reports/blob/main/image/lab2/part1img3.png?raw=true)
+It will not show up the "Hello World" we entered before.
 ___
 ## Part 2: Choose One of the Bugs From Lab 3
-reverseInPlace:
+Method reverseInPlace:
 
+Non-Failure-inducing input: ```{1}```
+![part2img2](https://github.com/kayden-yan/cse15l-lab-reports/blob/main/image/lab2/part2img2(3).png?raw=true)
+
+
+Failure-inducing input: ```{1,2,3}```. This was discovered by the Assertion test, as it can't outputs as expected.
+Symptom: ```{3,2,3}```
 ![part2img1](https://github.com/kayden-yan/cse15l-lab-reports/blob/main/image/lab2/part2img1.png?raw=true)
 
-Failure-inducing input: {1,2,3}. This was discovered by the Assertion test, as it can't outputs as expected.
-Symptom: {3,2,3}
 Bug: The method reverseInPlace actually mirrors the last part of the input array. It modifies the original array so once the index runs on the later half of the  original array, it fails to obtain the information that was overwritten by the method on the first half.
-Fix:
 
-![part2img2](https://github.com/kayden-yan/cse15l-lab-reports/blob/main/image/lab2/part2img2.png?raw=true)
+Before the fix:
+```
+static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+  }
+```
+After the fix:
+```
+static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length / 2; i += 1) {
+      int stored = arr[i];
+      arr[i] = arr[arr.length - i - 1];
+      arr[arr.length - i - 1] = stored;
+    }
+  }
+```
 
 ___
 ## Part 3: Describe Something You Learned From Lab
