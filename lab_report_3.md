@@ -133,9 +133,9 @@ Output:
 ___
 ## Source Cited:
 
-https://linuxconfig.org/how-to-use-find-command-to-search-for-files-based-on-file-size
+[External link to linuxconfig.org](https://linuxconfig.org/how-to-use-find-command-to-search-for-files-based-on-file-size)
 
-https://www.geeksforgeeks.org/find-command-in-linux-with-examples/
+[External link to geeksforgeeks.org](https://www.geeksforgeeks.org/find-command-in-linux-with-examples/)
 
-https://linuxize.com/post/how-to-find-files-in-linux-using-the-command-line/
+[External link to linuxize.com](https://linuxize.com/post/how-to-find-files-in-linux-using-the-command-line/)
 
