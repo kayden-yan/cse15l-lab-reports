@@ -130,9 +130,8 @@ written_2/non-fiction/OUP/Rybczynski/ch1.txt
 ___
 ## Source Cited:
 
-[External link to linuxconfig.org](https://linuxconfig.org/how-to-use-find-command-to-search-for-files-based-on-file-size)
+[https://linuxconfig.org/how-to-use-find-command-to-search-for-files-based-on-file-size](https://linuxconfig.org/how-to-use-find-command-to-search-for-files-based-on-file-size)
 
-[External link to geeksforgeeks.org](https://www.geeksforgeeks.org/find-command-in-linux-with-examples/)
+[https://www.geeksforgeeks.org/find-command-in-linux-with-examples/](https://www.geeksforgeeks.org/find-command-in-linux-with-examples/)
 
-[External link to linuxize.com](https://linuxize.com/post/how-to-find-files-in-linux-using-the-command-line/)
-
+[https://linuxize.com/post/how-to-find-files-in-linux-using-the-command-line/](https://linuxize.com/post/how-to-find-files-in-linux-using-the-command-line/)
