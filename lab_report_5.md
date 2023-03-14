@@ -65,6 +65,54 @@ rm -rf test-field
 ```
 
 ___
+## Explaination of My Script
+```
+## Copy the necessary files into one folder
+mkdir test-field
+mkdir test-field/lib
+cp lib/hamcrest-core-1.3.jar test-field/lib
+cp lib/junit-4.13.2.jar test-field/lib
+cp $FILE test-field
+cp TestListExamples.java test-field
+```
+
+Copy and paste necessary files into a single folder
+
+```
+## Complie
+cd test-field
+javac -cp $CPATH *.java &> compile_result.txt
+found=$(wc -w  compile_result.txt | cut -c1)
+if [[ $found > 0 ]]; then
+    echo "Compile Error!"
+    exit
+else
+    echo "Compile Success!"
+fi
+```
+Compile all java files, then outputs the compile result to a text file. The if statement reads the number of lines in the text file, return success if there is no result from compile.
+
+
+```
+## Run Test
+java -cp $CPATH org.junit.runner.JUnitCore TestListExamples > junit_result.txt
+if grep -q "OK" junit_result.txt; then
+  echo "All tests passed!"
+  echo "Score: 100 %"
+else
+    grep -o "Tests run: [0-9,]*," junit_result.txt > test_run.txt
+    num_test=$(sed -e 's/.*run: \(.*\),.*/\1/' test_run.txt)
+    failure_str=$(grep -o "Failures: [0-9,]*" junit_result.txt)
+    num_fail=$(echo $failure_str | tr -dc '0-9')
+    echo "Test_run: " $num_test
+    echo "Failures: " $num_fail
+    echo "Score: " $((($num_test - $num_fail) / $num_test * 100)) "%"
+fi
+```
+
+The ```grep``` and ```sed``` catches the format of JUnit output, specifically "Tests run: #, Failures: #". If the Failure equals zero, return perfect score. Otherwise, return a proportion of sucess test and number of total tests.
+
+___
 ## Here are All the Test Cases Provided from Lab 6
 
 ![image1](https://user-images.githubusercontent.com/122576038/224884556-99056e75-e2ca-459b-a47e-8b93e94f8b71.png)
